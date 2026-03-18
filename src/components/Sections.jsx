@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun, Github, Linkedin, Mail, ExternalLink, Download, Code2, Database, Layout, Server, Briefcase, GraduationCap, Trophy, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import profileImage from '../assets/1.jpg';
+import profileImage from '../assets/HeroProfile.jpg';
 import resumeFile from '../assets/Resume.pdf';
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
