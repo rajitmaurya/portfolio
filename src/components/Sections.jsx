@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun, Github, Linkedin, Mail, ExternalLink, Download, Code2, Database, Layout, Server, Briefcase, GraduationCap, Trophy, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import profileImage from '../assets/1.jpg';
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -24,7 +24,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   return (
     <nav className={`glass-nav transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
@@ -39,7 +39,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               {link.name}
             </a>
           ))}
-          <button 
+          <button
             onClick={() => setDarkMode(!darkMode)}
             className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
           >
@@ -49,7 +49,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          <button 
+          <button
             onClick={() => setDarkMode(!darkMode)}
             className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
           >
@@ -72,9 +72,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
+                <a
+                  key={link.name}
+                  href={link.href}
                   className="nav-link text-lg py-2"
                   onClick={() => setIsOpen(false)}
                 >
@@ -105,7 +105,7 @@ const Hero = () => {
         Open to Opportunities
       </motion.div>
 
-      <motion.h1 
+      <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
@@ -117,17 +117,17 @@ const Hero = () => {
         </span>
       </motion.h1>
 
-      <motion.p 
+      <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed"
       >
-        Hi, I'm Rajit Maurya. I build modern, scalable, and high-performance web applications 
+        Hi, I'm Rajit Maurya. I build modern, scalable, and high-performance web applications
         with a focus on clean code and exceptional user experience.
       </motion.p>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
@@ -143,7 +143,7 @@ const Hero = () => {
         </button>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
@@ -174,18 +174,19 @@ const About = () => {
     <section id="about" className="py-24 max-w-7xl mx-auto px-6">
       <SectionTitle title="About Me" icon={User} />
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="relative group"
         >
           <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-          <div className="premium-card relative bg-slate-100 dark:bg-slate-800 h-[400px] overflow-hidden">
-             {/* Replace with your image */}
-             <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium">
-               [ Profile Image Placeholder ]
-             </div>
+          <div className="premium-card relative h-[400px] overflow-hidden !p-0">
+            <img
+              src={profileImage}
+              alt="Rajit Maurya Profile"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
         <motion.div
@@ -195,8 +196,8 @@ const About = () => {
         >
           <h3 className="text-2xl font-bold mb-6">Passionate about building scalable web solutions</h3>
           <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-            As a MERN Stack Developer, I specialize in crafting robust backend architectures with Node.js 
-            and Express, paired with intuitive, high-performance frontends using React. I'm driven by 
+            As a MERN Stack Developer, I specialize in crafting robust backend architectures with Node.js
+            and Express, paired with intuitive, high-performance frontends using React. I'm driven by
             the challenge of solving complex problems and optimizing applications for the best user experience.
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -291,7 +292,7 @@ const Experience = () => {
       <SectionTitle title="Work Experience" icon={Briefcase} />
       <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-24 space-y-12 pb-12">
         {jobs.map((job, idx) => (
-          <motion.div 
+          <motion.div
             key={idx}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -355,8 +356,8 @@ const Projects = () => {
               className="group overflow-hidden premium-card !p-0"
             >
               <div className="relative h-56 overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -419,7 +420,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        
+
         <form className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <input type="text" placeholder="Name" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-[var(--border)] focus:outline-none focus:border-blue-600 transition-colors" />
