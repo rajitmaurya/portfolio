@@ -42,9 +42,24 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           ))}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="group relative flex items-center h-8 w-14 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 cursor-pointer transition-colors duration-300"
+            aria-label="Toggle Dark Mode"
           >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            <motion.div
+              className="absolute left-1 h-6 w-6 rounded-full bg-white dark:bg-slate-900 shadow-sm flex items-center justify-center z-10"
+              animate={{ x: darkMode ? 24 : 0 }}
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            >
+              {darkMode ? (
+                <Moon size={14} className="text-blue-500 fill-blue-500" />
+              ) : (
+                <Sun size={14} className="text-amber-500 fill-amber-500" />
+              )}
+            </motion.div>
+            <div className="flex justify-between w-full px-1.5 text-slate-400 dark:text-slate-500">
+              <Sun size={12} className={!darkMode ? "opacity-100" : "opacity-40 transition-opacity"} />
+              <Moon size={12} className={darkMode ? "opacity-100" : "opacity-40 transition-opacity"} />
+            </div>
           </button>
         </div>
 
@@ -52,9 +67,24 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         <div className="md:hidden flex items-center gap-4">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="group relative flex items-center h-7 w-12 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-0.5 cursor-pointer transition-colors"
+            aria-label="Toggle Dark Mode"
           >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            <motion.div
+              className="absolute left-0.5 h-6 w-6 rounded-full bg-white dark:bg-slate-900 shadow-sm flex items-center justify-center z-10"
+              animate={{ x: darkMode ? 20 : 0 }}
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            >
+              {darkMode ? (
+                <Moon size={12} className="text-blue-500 fill-blue-500" />
+              ) : (
+                <Sun size={12} className="text-amber-500 fill-amber-500" />
+              )}
+            </motion.div>
+            <div className="flex justify-between w-full px-1 text-slate-400">
+              <Sun size={10} className={!darkMode ? "opacity-100" : "opacity-40"} />
+              <Moon size={10} className={darkMode ? "opacity-100" : "opacity-40"} />
+            </div>
           </button>
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
