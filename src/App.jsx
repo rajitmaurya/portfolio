@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Hero, About, Skills, Experience, Projects, Contact, Footer } from './components/Sections';
+import { Navbar, Hero, About, Skills, Certifications, Experience, Education, Achievements, Projects, Contact, Footer } from './components/Sections';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -26,9 +26,11 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Projects />
         <Skills />
         <Experience />
-        <Projects />
+        <Education />
+        <Certifications />
         <Contact />
       </main>
       <Footer />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun, Github, Linkedin, Mail, ExternalLink, Download, Code2, Database, Layout, Server, Briefcase, GraduationCap, Trophy, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import profileImage from '../assets/1.jpg';
+import resumeFile from '../assets/Resume.pdf';
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -14,10 +15,10 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
   const navLinks = [
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Achievements', href: '#achievements' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Education', href: '#education' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -29,7 +30,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           animate={{ opacity: 1, x: 0 }}
           className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
         >
-          Rajit.Dev
+          Rajitram.Dev
         </motion.div>
 
         {/* Desktop Nav */}
@@ -107,7 +108,7 @@ const Hero = () => {
               Open to opportunities
             </span>
             <h1 className="mt-4 text-3xl sm:text-5xl font-extrabold tracking-tight">
-              Hi, I’m Rajit — MERN Stack Developer
+              Hi, I’m Rajitram — MERN Stack Developer
             </h1>
             <p className="mt-4 text-slate-600 dark:text-slate-300">
               I build responsive, scalable web apps with measurable outcomes: faster development cycles, optimized APIs,
@@ -115,7 +116,7 @@ const Hero = () => {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="mailto:kushwahavijay234@gmail.com"
+              <a href="mailto:rajitmaurya8318@gmail.com"
                 className="inline-flex items-center gap-2 rounded-md bg-brand-600 px-4 py-2 text-white hover:bg-brand-700 transition">
                 {/* Heroicon: Paper Airplane */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none"
@@ -124,7 +125,7 @@ const Hero = () => {
                 </svg>
                 Get in touch
               </a>
-              <a href="./assets/Vijay_Kushwaha_resume.pdf" download
+              <a href={resumeFile} download="Rajitram_Resume.pdf"
                 className="inline-flex items-center gap-2 rounded-md border border-slate-300 dark:border-slate-700 px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
                 {/* Heroicon: Document Download */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none"
@@ -187,7 +188,7 @@ const Hero = () => {
               className="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-tr from-brand-200/50 to-sky-100 dark:from-brand-900/20 dark:to-slate-900 blur-2xl">
             </div>
             <img className="w-full max-w-md mx-auto rounded-2xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800"
-              src="./assets/profile.jpg" alt="Vijay Kumar Kushwaha"
+              src={profileImage} alt="Rajitram"
               onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop'; }} />
           </motion.div>
         </div>
@@ -239,7 +240,7 @@ const About = () => {
           >
             <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
             <p className="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
-              I'm <span className="font-semibold text-brand-600 dark:text-brand-400">Vijay Kumar Kushwaha</span>, a Full Stack
+              I'm <span className="font-semibold text-brand-600 dark:text-brand-400">Rajitram</span>, a Full Stack
               Developer focused on the MERN stack. I build responsive, scalable web apps with clean architecture and
               measurable results.
             </p>
@@ -372,6 +373,46 @@ const Skills = () => {
   );
 };
 
+const Certifications = () => {
+  const certifications = [
+    { title: "MERN Stack", issuer: "GeeksforGeeks" },
+    { title: "Developing Applications with Google Cloud Specialization", issuer: "Google Cloud" },
+    { title: "Programming Foundations: Databases", issuer: "LinkedIn Learning" },
+    { title: "SEO Foundations", issuer: "LinkedIn Learning" }
+  ];
+
+  return (
+    <section id="certifications" className="py-16 sm:py-20 border-t border-slate-200/60 dark:border-slate-800 bg-white dark:bg-slate-950">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-2xl font-bold mb-8"
+        >
+          Certifications
+        </motion.h2>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {certifications.map((cert, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="rounded-xl border border-slate-200/70 dark:border-slate-800 p-5 bg-slate-50 dark:bg-slate-900/50 hover:shadow-md transition"
+            >
+              <p className="font-medium text-slate-900 dark:text-white">{cert.title}</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">{cert.issuer}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
@@ -442,6 +483,130 @@ const Experience = () => {
   );
 };
 
+const Education = () => {
+  const educationItems = [
+    {
+      degree: "B.Tech — Information Technology",
+      period: "2022 – 2025",
+      institution: "Kanpur Institute of Technology, Kanpur",
+      result: "7.22",
+      resultType: "CGPA"
+    },
+    {
+      degree: "Diploma — Information Technology",
+      period: "2019 – 2022",
+      institution: "Feroze Gandhi Polytechnic, Raebareli",
+      result: "77%",
+      resultType: "Percentage"
+    },
+    {
+      degree: "XII — CISCE Board",
+      period: "2018",
+      institution: "Radha Krishna Memorial Education Center, Raebareli",
+      result: "48%",
+      resultType: "Percentage"
+    },
+    {
+      degree: "X — CISCE Board",
+      period: "2016",
+      institution: "Radha Krishna Memorial Education Center, Raebareli",
+      result: "60%",
+      resultType: "Percentage"
+    }
+  ];
+
+  return (
+    <section id="education" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold tracking-tight text-center"
+        >
+          Education
+        </motion.h2>
+
+        <div className="mt-12 space-y-10">
+          {educationItems.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="relative border-l-4 border-brand-500 pl-6"
+            >
+              <div className="absolute -left-2 top-0 h-4 w-4 rounded-full bg-brand-500 ring-2 ring-white dark:ring-slate-950">
+              </div>
+              <div className="bg-slate-50 dark:bg-slate-900 rounded-xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800 p-6">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <h3 className="text-lg font-semibold">{item.degree}</h3>
+                  <span className="text-sm text-slate-500 dark:text-slate-400">{item.period}</span>
+                </div>
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                  {item.institution}
+                  <br />
+                  {item.resultType}: <span className="font-medium text-brand-600 dark:text-brand-400">{item.result}</span>
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Achievements = () => {
+  const achievements = [
+    {
+      title: "Open Source Contributor",
+      desc: "Contributed to various MERN stack projects and UI libraries, improving documentation and fixing bugs."
+    },
+    {
+      title: "Hackathon Finalist",
+      desc: "Developed a full-stack solution for local businesses during a regional engineering hackathon."
+    }
+  ];
+
+  return (
+    <section id="achievements" className="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-200/60 dark:border-slate-800">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold tracking-tight text-center"
+        >
+          Achievements
+        </motion.h2>
+
+        <div className="mt-12 grid md:grid-cols-2 gap-8">
+          {achievements.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="p-6 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/60 dark:border-slate-800 shadow-sm"
+            >
+              <div className="flex items-center gap-4 mb-3">
+                <div className="p-2 bg-brand-100 dark:bg-brand-900/30 rounded-lg text-brand-600">
+                  <Trophy size={20} />
+                </div>
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+              </div>
+              <p className="text-sm text-slate-600 dark:text-slate-300">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Projects = () => {
   const projects = [
     {
@@ -473,7 +638,7 @@ const Projects = () => {
       desc: "Responsive movie search using Watchmode API (4000+ records), debounced input (500ms), modular components, and zero-crash fallbacks.",
       tech: ["React", "Tailwind", "Watchmode API"],
       image: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200&auto=format&fit=crop",
-      code: "https://github.com/kushvijay234/movieapp",
+      code: "https://github.com/rajitmaurya/movieapp",
       live: "https://movieapp-one-alpha.vercel.app/"
     },
     {
@@ -481,7 +646,7 @@ const Projects = () => {
       desc: "Fully responsive tourism site with 10+ destinations, optimized assets (~30% faster loads), and improved SEO visibility.",
       tech: ["HTML", "CSS", "JavaScript"],
       image: "./assets/Tourism.jpeg",
-      code: "https://github.com/kushvijay234/Tourism",
+      code: "https://github.com/rajitmaurya/Tourism",
       fallbackImage: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200"
     },
     {
@@ -489,8 +654,8 @@ const Projects = () => {
       desc: "Real-time GitHub user search with REST API, repositories, followers, and robust error handling (0% crashes in testing).",
       tech: ["HTML/CSS", "JavaScript", "GitHub API"],
       image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop",
-      code: "https://github.com/kushvijay234/githubFinder",
-      live: "https://kushvijay234.github.io/githubFinder/"
+      code: "https://github.com/rajitmaurya/githubFinder",
+      live: "https://rajitmaurya.github.io/githubFinder/"
     }
   ];
 
@@ -499,7 +664,7 @@ const Projects = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-2xl font-bold">Projects</h2>
-          <a href="https://github.com/kushvijay234" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/rajitmaurya" target="_blank" rel="noopener noreferrer"
             className="text-sm text-brand-700 dark:text-brand-300 hover:underline">View GitHub</a>
         </div>
 
@@ -565,49 +730,76 @@ const Projects = () => {
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 max-w-7xl mx-auto px-6">
-      <SectionTitle title="Get In Touch" subtitle="Let's discuss how we can work together on your next project" icon={Mail} />
-      <div className="grid md:grid-cols-2 gap-12">
-        <div className="space-y-8">
-          <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 flex items-center justify-center border border-blue-100 dark:border-blue-800">
-              <Mail size={22} />
+    <section id="contact" className="py-16 sm:py-20 border-t border-slate-200/60 dark:border-slate-800 bg-white dark:bg-slate-950">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-2xl font-bold"
+        >
+          Contact
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="mt-3 text-slate-600 dark:text-slate-300"
+        >
+          I’d love to hear about your project or collaboration ideas. Email me or connect on LinkedIn.
+        </motion.p>
+
+        <div className="mt-8 grid sm:grid-cols-2 gap-4">
+          <motion.a
+            href="mailto:rajitmaurya8318@gmail.com"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-4 rounded-xl border border-slate-200/70 dark:border-slate-800 p-5 hover:shadow-card transition bg-slate-50 dark:bg-slate-900/50"
+          >
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-600 flex items-center justify-center">
+              <Mail size={20} />
             </div>
             <div>
-              <p className="text-sm text-slate-500">Email Me</p>
-              <p className="font-medium">kushwahavijay234@gmail.com</p>
+              <div className="text-sm font-semibold">Email</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">rajitmaurya8318@gmail.com</div>
             </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 flex items-center justify-center border border-blue-100 dark:border-blue-800">
-              <Github size={22} />
+          </motion.a>
+
+          <motion.a
+            href="https://www.linkedin.com/in/rajit-maurya"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-4 rounded-xl border border-slate-200/70 dark:border-slate-800 p-5 hover:shadow-card transition bg-slate-50 dark:bg-slate-900/50"
+          >
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-600 flex items-center justify-center">
+              <Linkedin size={20} />
             </div>
             <div>
-              <p className="text-sm text-slate-500">GitHub</p>
-              <p className="font-medium">github.com/rajit-maurya</p>
+              <div className="text-sm font-semibold">LinkedIn</div>
+              <div className="text-xs text-slate-500 dark:text-slate-400">linkedin.com/in/rajit-maurya</div>
             </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 flex items-center justify-center border border-blue-100 dark:border-blue-800">
-              <Linkedin size={22} />
-            </div>
-            <div>
-              <p className="text-sm text-slate-500">LinkedIn</p>
-              <p className="font-medium">linkedin.com/in/rajit-maurya</p>
-            </div>
-          </div>
+          </motion.a>
         </div>
 
-        <form className="space-y-4">
+        <motion.form
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-10 space-y-4"
+        >
           <div className="grid grid-cols-2 gap-4">
-            <input type="text" placeholder="Name" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-[var(--border)] focus:outline-none focus:border-blue-600 transition-colors" />
-            <input type="email" placeholder="Email" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-[var(--border)] focus:outline-none focus:border-blue-600 transition-colors" />
+            <input type="text" placeholder="Name" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 focus:outline-none focus:border-brand-500 transition-colors" />
+            <input type="email" placeholder="Email" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 focus:outline-none focus:border-brand-500 transition-colors" />
           </div>
-          <input type="text" placeholder="Subject" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-[var(--border)] focus:outline-none focus:border-blue-600 transition-colors" />
-          <textarea rows="4" placeholder="Message" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-[var(--border)] focus:outline-none focus:border-blue-600 transition-colors"></textarea>
-          <button className="btn-primary w-full justify-center">Send Message</button>
-        </form>
+          <input type="text" placeholder="Subject" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 focus:outline-none focus:border-brand-500 transition-colors" />
+          <textarea rows="4" placeholder="Message" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 focus:outline-none focus:border-brand-500 transition-colors"></textarea>
+          <button className="w-full bg-brand-600 hover:bg-brand-700 text-white font-medium py-4 rounded-xl transition shadow-lg shadow-brand-500/20">Send Message</button>
+        </motion.form>
       </div>
     </section>
   );
@@ -615,9 +807,9 @@ const Contact = () => {
 
 const Footer = () => (
   <footer className="py-12 border-t border-[var(--border)] text-center text-slate-500 text-sm">
-    <p>© {new Date().getFullYear()} Vijay Kumar Kushwaha. Built with React & Tailwind CSS.</p>
+    <p>© {new Date().getFullYear()} Rajitram. Built with React & Tailwind CSS.</p>
   </footer>
 );
 
-export { Navbar, Hero, About, Skills, Experience, Projects, Contact, Footer };
+export { Navbar, Hero, About, Skills, Certifications, Experience, Education, Achievements, Projects, Contact, Footer };
 
