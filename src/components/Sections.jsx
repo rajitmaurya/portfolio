@@ -91,68 +91,107 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
 const Hero = () => {
   return (
-    <section className="min-h-[90vh] flex flex-col justify-center items-center text-center px-6 pt-20">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-8 border border-blue-100 dark:border-blue-800"
-      >
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-        </span>
-        Open to Opportunities
-      </motion.div>
+    <section id="hero" className="relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-50 to-white dark:from-slate-900 dark:to-slate-950">
+      </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span
+              className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300 ring-1 ring-brand-500/20">
+              <span className="inline-block h-2 w-2 rounded-full bg-brand-500"></span>
+              Open to opportunities
+            </span>
+            <h1 className="mt-4 text-3xl sm:text-5xl font-extrabold tracking-tight">
+              Hi, I’m Rajit — MERN Stack Developer
+            </h1>
+            <p className="mt-4 text-slate-600 dark:text-slate-300">
+              I build responsive, scalable web apps with measurable outcomes: faster development cycles, optimized APIs,
+              and crash‑free UX.
+            </p>
 
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-[1.1]"
-      >
-        MERN Stack <br />
-        <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-          Developer
-        </span>
-      </motion.h1>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="mailto:kushwahavijay234@gmail.com"
+                className="inline-flex items-center gap-2 rounded-md bg-brand-600 px-4 py-2 text-white hover:bg-brand-700 transition">
+                {/* Heroicon: Paper Airplane */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 12l14-7-7 14-2-5-5-2z" />
+                </svg>
+                Get in touch
+              </a>
+              <a href="./assets/Vijay_Kushwaha_resume.pdf" download
+                className="inline-flex items-center gap-2 rounded-md border border-slate-300 dark:border-slate-700 px-4 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
+                {/* Heroicon: Document Download */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                    d="M12 16v-4m0 4l-2-2m2 2l2-2m-6 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Download Resume
+              </a>
+              <a href="#projects"
+                className="inline-flex items-center gap-2 rounded-md border border-brand-200 dark:border-brand-800 px-4 py-2  dark:hover:bg-brand-950 transition">
+                {/* Heroicon: Command Line */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                    d="M8 9l3 3-3 3M13 15h3M3 5h18v14H3z" />
+                </svg>
+                View projects
+              </a>
+            </div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed"
-      >
-        Hi, I'm Rajit Maurya. I build modern, scalable, and high-performance web applications
-        with a focus on clean code and exceptional user experience.
-      </motion.p>
+            <div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-300">
+              <div className="flex items-center gap-2">
+                {/* Heroicon: Map Pin */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                    d="M12 11a4 4 0 100-8 4 4 0 000 8zm0 0c-5 0-9 2.5-9 5.5V19h18v-2.5c0-3-4-5.5-9-5.5z" />
+                </svg>
+                Noida, Uttar Pradesh, India
+              </div>
+              <div className="flex items-center gap-2">
+                {/* Heroicon: Inbox */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                    d="M20 13V7a2 2 0 00-2-2H6a2 2 0 00-2 2v6m16 0h-4l-2 3h-4l-2-3H4m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5" />
+                </svg>
+                rajitmaurya8318@gmail.com
+              </div>
+              <div className="flex items-center gap-2">
+                {/* Heroicon: Phone */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
+                    d="M3 5a2 2 0 012-2h1a2 2 0 012 2v1c0 .5-.2 1-.6 1.4L6.6 9.2a16 16 0 006.2 6.2l1.8-1.8c.4-.4.9-.6 1.4-.6h1a2 2 0 012 2v1a2 2 0 01-2 2h-.5C9.6 23 1 14.4 1.6 5.5 1.7 4.7 2.3 4 3.1 4H3a2 2 0 010 1z" />
+                </svg>
+                +91 8318237520
+              </div>
+            </div>
+          </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="flex flex-col sm:flex-row gap-4 sm:gap-6"
-      >
-        <button className="btn-primary">
-          <Mail size={18} />
-          Get in touch
-        </button>
-        <button className="btn-secondary">
-          <Download size={18} />
-          Download Resume
-        </button>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="mt-20 animate-bounce text-slate-400"
-      >
-        <div className="w-6 h-10 border-2 border-slate-300 dark:border-slate-700 rounded-full flex justify-center p-1">
-          <div className="w-1 h-2 bg-slate-400 rounded-full"></div>
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div
+              className="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-tr from-brand-200/50 to-sky-100 dark:from-brand-900/20 dark:to-slate-900 blur-2xl">
+            </div>
+            <img className="w-full max-w-md mx-auto rounded-2xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800"
+              src="./assets/profile.jpg" alt="Vijay Kumar Kushwaha"
+              onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop'; }} />
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
@@ -171,96 +210,160 @@ const SectionTitle = ({ title, subtitle, icon: Icon }) => (
 
 const About = () => {
   return (
-    <section id="about" className="py-24 max-w-7xl mx-auto px-6">
-      <SectionTitle title="About Me" icon={User} />
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="relative group"
-        >
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-          <div className="premium-card relative h-[400px] overflow-hidden !p-0">
-            <img
-              src={profileImage}
-              alt="Rajit Maurya Profile"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-bold mb-6">Passionate about building scalable web solutions</h3>
-          <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-            As a MERN Stack Developer, I specialize in crafting robust backend architectures with Node.js
-            and Express, paired with intuitive, high-performance frontends using React. I'm driven by
-            the challenge of solving complex problems and optimizing applications for the best user experience.
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { label: 'Experience', value: '2+ Years' },
-              { label: 'Completed', value: '15+ Projects' },
-              { label: 'Support', value: '24/7 Online' },
-              { label: 'Tech', value: 'MERN Stack' },
-            ].map((stat) => (
-              <div key={stat.label} className="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-[var(--border)]">
-                <span className="block text-blue-600 font-bold text-xl">{stat.value}</span>
-                <span className="text-sm text-slate-500">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+    <section id="about" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+
+          {/* Left column: Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <div
+              className="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-tr from-brand-200/50 to-sky-100 dark:from-brand-900/20 dark:to-slate-900 blur-2xl">
+            </div>
+            <img src="./assets/19362653.jpg" alt="Developer vector"
+              className="w-full max-w-md mx-auto rounded-2xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800"
+              onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200' }} />
+          </motion.div>
+
+          {/* Right column: Info */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
+            <p className="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+              I'm <span className="font-semibold text-brand-600 dark:text-brand-400">Vijay Kumar Kushwaha</span>, a Full Stack
+              Developer focused on the MERN stack. I build responsive, scalable web apps with clean architecture and
+              measurable results.
+            </p>
+
+            <ul className="mt-6 space-y-4 text-sm text-slate-600 dark:text-slate-300">
+              {[
+                "Delivered 4+ full-stack apps with 0% crash rates and ~40% API optimization.",
+                "Designed reusable UI components and modular file structures.",
+                "Passionate about clean UX, backend integration, and professional polish."
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <svg className="h-5 w-5 text-brand-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
 const Skills = () => {
-  const skillCategories = [
+  const categories = [
     {
-      title: 'Frontend',
-      icon: Layout,
-      skills: ['React', 'Next.js', 'Tailwind CSS', 'Redux', 'TypeScript', 'Framer Motion'],
+      title: "Frontend",
+      skills: [
+        { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+        { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { name: "JavaScript (ES6+)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+        { name: "Tailwind CSS", icon: "./assets/tailwindcss-logotype-white.svg", isLocal: true, fallback: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      ]
     },
     {
-      title: 'Backend',
-      icon: Server,
-      skills: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'GraphQL', 'REST APIs'],
+      title: "Backend",
+      skills: [
+        { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+        { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        { name: "REST APIs", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/api/api-original.svg" },
+        { name: "JWT Authentication", icon: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/4/jwt-icon-138bxvrhijus263d2f2wur.png/jwt-icon-aqjx58uyj3lrxtborzgyg.png?_a=DATAg1AAZAA0" },
+      ]
     },
     {
-      title: 'Tools & DevOps',
-      icon: Code2,
-      skills: ['Git', 'Docker', 'AWS', 'Vercel', 'Firebase', 'Jest'],
+      title: "Databases",
+      skills: [
+        { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+        { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "Oracle", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" },
+      ]
     },
+    {
+      title: "DevOps & Tools",
+      skills: [
+        { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+        { name: "GitHub Actions", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+        { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+      ]
+    },
+    {
+      title: "CMS & E-commerce",
+      skills: [
+        { name: "WordPress", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" },
+        { name: "WooCommerce", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg" },
+      ]
+    },
+    {
+      title: "Soft Skills",
+      skills: [
+        { name: "Problem-solving", emoji: "🧠" },
+        { name: "Communication", emoji: "💬" },
+        { name: "Time Management", emoji: "⏱️" },
+        { name: "Teamwork", emoji: "🤝" },
+        { name: "Creativity", emoji: "🎨" },
+      ]
+    }
   ];
 
   return (
-    <section id="skills" className="py-24 bg-slate-50 dark:bg-slate-900/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <SectionTitle title="Technical Skills" subtitle="Categorized expertise in modern web development" icon={Code2} />
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillCategories.map((cat, idx) => (
+    <section id="skills" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold tracking-tight text-center"
+        >
+          Skills
+        </motion.h2>
+
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.map((category, catIdx) => (
             <motion.div
-              key={cat.title}
-              initial={{ opacity: 0, y: 20 }}
+              key={category.title}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="premium-card flex flex-col items-center text-center h-full"
+              transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+              className="rounded-xl bg-slate-50 dark:bg-slate-900 p-6 shadow-card ring-1 ring-slate-200/60 dark:border-slate-800"
             >
-              <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center mb-6">
-                <cat.icon size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-6">{cat.title}</h3>
-              <div className="flex flex-wrap justify-center gap-3">
-                {cat.skills.map((skill) => (
-                  <span key={skill} className="tech-pill">{skill}</span>
+              <h3 className="text-lg font-semibold mb-4">{category.title}</h3>
+              <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                {category.skills.map((skill, skillIdx) => (
+                  <li key={skillIdx} className="flex items-center gap-3">
+                    {skill.icon ? (
+                      <img
+                        src={skill.icon}
+                        className="h-5 w-5 object-contain"
+                        alt={skill.name}
+                        onError={(e) => {
+                          if (skill.fallback) e.target.src = skill.fallback;
+                        }}
+                      />
+                    ) : (
+                      <span className="text-lg leading-none">{skill.emoji}</span>
+                    )}
+                    {skill.name}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>
@@ -270,47 +373,70 @@ const Skills = () => {
 };
 
 const Experience = () => {
-  const jobs = [
-    {
-      role: 'Senior Full Stack Developer',
-      company: 'Tech Innovators Inc.',
-      period: 'Jan 2023 - Present',
-      desc: 'Leading the development of a microservices-based e-commerce platform. Improved load times by 40% and implemented real-time tracking using WebSockets.',
-      tags: ['React', 'Node.js', 'Redis'],
-    },
-    {
-      role: 'MERN Stack Developer',
-      company: 'Digital Solutions Co.',
-      period: 'June 2021 - Dec 2022',
-      desc: 'Developed and maintained various client-facing web applications. Specialized in optimizing database queries and frontend performance.',
-      tags: ['MongoDB', 'Express', 'AWS'],
-    },
-  ];
-
   return (
-    <section id="experience" className="py-24 max-w-7xl mx-auto px-6">
-      <SectionTitle title="Work Experience" icon={Briefcase} />
-      <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-24 space-y-12 pb-12">
-        {jobs.map((job, idx) => (
+    <section id="experience" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold tracking-tight text-center"
+        >
+          Experience
+        </motion.h2>
+
+        <div className="mt-12 space-y-10">
+          {/* GeeksforGeeks Internship */}
           <motion.div
-            key={idx}
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative pl-10"
+            className="relative border-l-4 border-brand-500 pl-6"
           >
-            <div className="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-blue-600 border-4 border-[var(--background)]"></div>
-            <div className="premium-card relative">
-              <span className="text-blue-600 text-sm font-bold uppercase tracking-wider">{job.period}</span>
-              <h3 className="text-2xl font-bold mt-1 mb-2">{job.role}</h3>
-              <p className="text-slate-500 font-medium mb-4">{job.company}</p>
-              <p className="text-slate-600 dark:text-slate-400 mb-6">{job.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {job.tags.map(tag => <span key={tag} className="tech-pill">{tag}</span>)}
+            <div className="absolute -left-2 top-0 h-4 w-4 rounded-full bg-brand-500 ring-2 ring-white dark:ring-slate-950">
+            </div>
+            <div
+              className="bg-slate-50 dark:bg-slate-900 rounded-xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800 p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">MERN Stack Intern — GeeksforGeeks</h3>
+                <span className="text-sm text-slate-500 dark:text-slate-400">June 2025 – Sept 2025</span>
+              </div>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                Built full-stack applications using MongoDB, Express.js, React.js, and Node.js. Delivered optimized APIs,
+                reusable UI components, and crash-free deployments.
+              </p>
+              <ul className="mt-4 grid gap-2 text-sm list-disc pl-5 text-slate-600 dark:text-slate-300">
+                <li>Designed RESTful APIs and integrated JWT-based authentication.</li>
+                <li>Improved development speed by ~25% through modular architecture.</li>
+                <li>Collaborated in Agile sprints and Git workflows with CI/CD pipelines.</li>
+                <li>Handled backend debugging, frontend responsiveness, and deployment.</li>
+              </ul>
+              <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                {["React", "Node.js", "Express", "MongoDB", "JWT", "Git"].map(tech => (
+                  <span key={tech}
+                    className="px-2 py-1 rounded bg-brand-100 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300">
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </motion.div>
-        ))}
+
+          {/* Future Experience Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="relative border-l-4 border-slate-300 dark:border-slate-700 pl-6"
+          >
+            <div className="absolute -left-2 top-0 h-4 w-4 rounded-full bg-slate-300 dark:bg-slate-700 ring-2 ring-white dark:ring-slate-950"></div>
+            <div className="bg-slate-50 dark:bg-slate-900 rounded-xl ring-1 ring-slate-200/60 dark:ring-slate-800 p-6">
+              <h3 className="text-lg font-semibold text-slate-400 dark:text-slate-500">Your Next Role</h3>
+              <p className="mt-2 text-sm text-slate-400 dark:text-slate-500 italic">Ready to add your next achievement here — freelance, full-time, or open-source.</p>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -319,65 +445,117 @@ const Experience = () => {
 const Projects = () => {
   const projects = [
     {
-      title: 'EchoStream Pro',
-      desc: 'Highly scalable video streaming platform with real-time comments and dynamic adaptive bitrate.',
-      tech: ['Next.js', 'Firebase', 'Stripe'],
-      metric: '30% Faster Loads',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1074',
+      title: "QuickBill Restaurant POS",
+      desc: "Full-stack POS system for restaurants with table-wise billing, category-based menus, order tracking, and printable receipts. Built with REST APIs, MongoDB, and Tailwind/PostCSS.",
+      tech: ["React", "Node/Express", "MongoDB", "Tailwind"],
+      image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop",
+      code: "https://github.com/kushvijay234/quickbill-restaurant-pos",
+      live: "https://quickbill-restaurant-pos.vercel.app/"
     },
     {
-      title: 'FinanceFlow',
-      desc: 'Intelligent expense tracker with automated bank sync and AI-powered spending insights.',
-      tech: ['React Native', 'Node.js', 'PostgreSQL'],
-      metric: '10k+ Monthly Users',
-      image: 'https://images.unsplash.com/photo-1551288049-bbbda5366991?auto=format&fit=crop&q=80&w=1170',
+      title: "HyperMarket Ecommerce App",
+      desc: "Ecommerce website for hypermarkets with product management, category filters, dynamic cart, and receipt generation. Optimized for speed and scalability using Vite and MongoDB.",
+      tech: ["React", "Node/Express", "MongoDB", "Vite"],
+      image: "./assets/hyper-market-eight.vercel.app.png",
+      code: "https://github.com/kushvijay234/hyper-market",
+      live: "https://hyper-market-eight.vercel.app/",
+      fallbackImage: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1200"
     },
     {
-      title: 'DevCollab',
-      desc: 'Real-time collaborative code editor with video conferencing and integrated debugger.',
-      tech: ['Socket.io', 'Monaco', 'WebRTC'],
-      metric: '99.9% Uptime',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1170',
+      title: "Voucher Receipt App",
+      desc: "Voucher management with create/list/print, REST APIs, UUID IDs, xlsx persistence (1,000+ records), and print-ready receipts.",
+      tech: ["React", "Node/Express", "Vite", "xlsx"],
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop",
+      code: "https://github.com/kushvijay234/voucher-receipt-app",
     },
+    {
+      title: "Movie Explorer App",
+      desc: "Responsive movie search using Watchmode API (4000+ records), debounced input (500ms), modular components, and zero-crash fallbacks.",
+      tech: ["React", "Tailwind", "Watchmode API"],
+      image: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200&auto=format&fit=crop",
+      code: "https://github.com/kushvijay234/movieapp",
+      live: "https://movieapp-one-alpha.vercel.app/"
+    },
+    {
+      title: "Tourism Web Page",
+      desc: "Fully responsive tourism site with 10+ destinations, optimized assets (~30% faster loads), and improved SEO visibility.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "./assets/Tourism.jpeg",
+      code: "https://github.com/kushvijay234/Tourism",
+      fallbackImage: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200"
+    },
+    {
+      title: "GitHub Finder App",
+      desc: "Real-time GitHub user search with REST API, repositories, followers, and robust error handling (0% crashes in testing).",
+      tech: ["HTML/CSS", "JavaScript", "GitHub API"],
+      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop",
+      code: "https://github.com/kushvijay234/githubFinder",
+      live: "https://kushvijay234.github.io/githubFinder/"
+    }
   ];
 
   return (
-    <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-900/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <SectionTitle title="Featured Projects" subtitle="A selection of my best work, focused on performance and impact" icon={Layout} />
-        <div className="grid md:grid-cols-3 gap-8">
+    <section id="projects" className="py-16 sm:py-20 border-t border-slate-200/60 dark:border-slate-800">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="text-2xl font-bold">Projects</h2>
+          <a href="https://github.com/kushvijay234" target="_blank" rel="noopener noreferrer"
+            className="text-sm text-brand-700 dark:text-brand-300 hover:underline">View GitHub</a>
+        </div>
+
+        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
+            <motion.article
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group overflow-hidden premium-card !p-0"
+              className="group rounded-2xl border border-slate-200/70 dark:border-slate-800 p-5 hover:shadow-card transition bg-white dark:bg-slate-900/50"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="aspect-[16/9] overflow-hidden rounded-lg ring-1 ring-slate-200/60 dark:ring-slate-800">
                 <img
                   src={project.image}
+                  className="h-full w-full object-cover group-hover:scale-[1.02] transition"
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  onError={(e) => {
+                    if (project.fallbackImage) e.target.src = project.fallbackImage;
+                  }}
                 />
-                <div className="absolute top-4 right-4 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest">
-                  {project.metric}
-                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 flex justify-between items-center group-hover:text-blue-600 transition-colors">
-                  {project.title}
-                  <ExternalLink size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 line-clamp-2">
-                  {project.desc}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map(t => <span key={t} className="tech-pill !bg-white dark:!bg-slate-700">{t}</span>)}
-                </div>
+              <h3 className="mt-4 font-semibold text-slate-900 dark:text-white">{project.title}</h3>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 line-clamp-3">
+                {project.desc}
+              </p>
+              <ul className="mt-3 flex flex-wrap gap-2 text-[11px]">
+                {project.tech.map((t, i) => (
+                  <li key={i} className="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 flex gap-3">
+                {project.code && (
+                  <a href={project.code} target="_blank" rel="noopener noreferrer"
+                    className="text-sm inline-flex items-center gap-1 hover:text-brand-600 dark:hover:text-brand-400 transition hover:underline">
+                    <span>Code</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </a>
+                )}
+                {project.live && (
+                  <a href={project.live} target="_blank" rel="noopener noreferrer"
+                    className="text-sm inline-flex items-center gap-1 hover:text-brand-600 dark:hover:text-brand-400 transition hover:underline">
+                    <span>Live Preview</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  </a>
+                )}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>
@@ -398,7 +576,7 @@ const Contact = () => {
             </div>
             <div>
               <p className="text-sm text-slate-500">Email Me</p>
-              <p className="font-medium">rajit.maurya@example.com</p>
+              <p className="font-medium">kushwahavijay234@gmail.com</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -437,7 +615,7 @@ const Contact = () => {
 
 const Footer = () => (
   <footer className="py-12 border-t border-[var(--border)] text-center text-slate-500 text-sm">
-    <p>© {new Date().getFullYear()} Rajit Maurya. Built with React & Tailwind CSS.</p>
+    <p>© {new Date().getFullYear()} Vijay Kumar Kushwaha. Built with React & Tailwind CSS.</p>
   </footer>
 );
 
