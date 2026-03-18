@@ -30,7 +30,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           animate={{ opacity: 1, x: 0 }}
           className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
         >
-          Rajitram.Dev
+          Rajit Maurya
         </motion.div>
 
         {/* Desktop Nav */}
@@ -125,7 +125,7 @@ const Hero = () => {
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-50 to-white dark:from-slate-900 dark:to-slate-950">
       </div>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
