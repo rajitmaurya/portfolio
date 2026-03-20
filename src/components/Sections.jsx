@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import profileImage from '../assets/HeroProfile.jpg';
 import resumeFile from '../assets/Resume.pdf';
 import githubFinderImage from '../assets/github-finder.png';
+import ByteBazaar from '../assets/ByteBazaar.png';
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -645,9 +646,9 @@ const Projects = () => {
       title: "ByteBazaar Ecommerce App",
       desc: "Ecommerce website for hypermarkets with product management, category filters, dynamic cart, and receipt generation. Optimized for speed and scalability using Vite and MongoDB.",
       tech: ["React", "Node/Express", "MongoDB", "Vite"],
-      image: "./assets/hyper-market-eight.vercel.app.png",
-      code: "https://github.com/kushvijay234/hyper-market",
-      live: "https://hyper-market-eight.vercel.app/",
+      image: ByteBazaar,
+      code: "https://github.com/rajitmaurya/ByteBazaar",
+      live: "https://byte-bazaarin.vercel.app/",
       fallbackImage: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1200"
     },
       {
