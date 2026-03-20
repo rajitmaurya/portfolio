@@ -3,6 +3,7 @@ import { Menu, X, Moon, Sun, Github, Linkedin, Mail, ExternalLink, Download, Cod
 import { motion, AnimatePresence } from 'framer-motion';
 import profileImage from '../assets/HeroProfile.jpg';
 import resumeFile from '../assets/Resume.pdf';
+import githubFinderImage from '../assets/github-finder.png';
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -334,13 +335,13 @@ const Skills = () => {
         { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
       ]
     },
-    {
-      title: "CMS & E-commerce",
-      skills: [
-        { name: "WordPress", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" },
-        { name: "WooCommerce", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg" },
-      ]
-    },
+    // {
+    //   title: "CMS & E-commerce",
+    //   skills: [
+    //     { name: "WordPress", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" },
+    //     { name: "WooCommerce", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg" },
+    //   ]
+    // },
     {
       title: "Soft Skills",
       skills: [
@@ -470,7 +471,7 @@ const Experience = () => {
               className="bg-slate-50 dark:bg-slate-900 rounded-xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800 p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">MERN Stack Intern — GeeksforGeeks</h3>
-                <span className="text-sm text-slate-500 dark:text-slate-400">June 2025 – Sept 2025</span>
+                <span className="text-sm text-slate-500 dark:text-slate-400">Nov 2025 – Feb 2025</span>
               </div>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                 Built full-stack applications using MongoDB, Express.js, React.js, and Node.js. Delivered optimized APIs,
@@ -494,7 +495,7 @@ const Experience = () => {
           </motion.div>
 
           {/* Future Experience Placeholder */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -506,7 +507,7 @@ const Experience = () => {
               <h3 className="text-lg font-semibold text-slate-400 dark:text-slate-500">Your Next Role</h3>
               <p className="mt-2 text-sm text-slate-400 dark:text-slate-500 italic">Ready to add your next achievement here — freelance, full-time, or open-source.</p>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
@@ -516,31 +517,31 @@ const Experience = () => {
 const Education = () => {
   const educationItems = [
     {
-      degree: "B.Tech — Information Technology",
-      period: "2022 – 2025",
-      institution: "Kanpur Institute of Technology, Kanpur",
-      result: "7.22",
+      degree: "BCA — Computer Science ",
+      period: "2023 – 2026",
+      institution: "Dr.Ram Manohar lohiya Avadh University , Ayodhya ",
+      result: "8.63",
       resultType: "CGPA"
     },
+    // {
+    //   degree: "Diploma — Information Technology",
+    //   period: "2019 – 2022",
+    //   institution: "Feroze Gandhi Polytechnic, Raebareli",
+    //   result: "77%",
+    //   resultType: "Percentage"
+    // },
     {
-      degree: "Diploma — Information Technology",
-      period: "2019 – 2022",
-      institution: "Feroze Gandhi Polytechnic, Raebareli",
-      result: "77%",
+      degree: "XII — UP Board",
+      period: "2023",
+      institution: "BAIJ NATH CHAUDHARY SMARAK INTER COLLEGE , GONDA",
+      result: "81.4%",
       resultType: "Percentage"
     },
     {
-      degree: "XII — CISCE Board",
-      period: "2018",
-      institution: "Radha Krishna Memorial Education Center, Raebareli",
-      result: "48%",
-      resultType: "Percentage"
-    },
-    {
-      degree: "X — CISCE Board",
-      period: "2016",
-      institution: "Radha Krishna Memorial Education Center, Raebareli",
-      result: "60%",
+      degree: "X — UP Board",
+      period: "2021",
+      institution: "R K DEVI B UMV DULHAPUR BANKAT, GONDA",
+      result: "82.83%",
       resultType: "Percentage"
     }
   ];
@@ -639,22 +640,23 @@ const Achievements = () => {
 
 const Projects = () => {
   const projects = [
+
     {
-      title: "QuickBill Restaurant POS",
-      desc: "Full-stack POS system for restaurants with table-wise billing, category-based menus, order tracking, and printable receipts. Built with REST APIs, MongoDB, and Tailwind/PostCSS.",
-      tech: ["React", "Node/Express", "MongoDB", "Tailwind"],
-      image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop",
-      code: "https://github.com/kushvijay234/quickbill-restaurant-pos",
-      live: "https://quickbill-restaurant-pos.vercel.app/"
-    },
-    {
-      title: "HyperMarket Ecommerce App",
+      title: "ByteBazaar Ecommerce App",
       desc: "Ecommerce website for hypermarkets with product management, category filters, dynamic cart, and receipt generation. Optimized for speed and scalability using Vite and MongoDB.",
       tech: ["React", "Node/Express", "MongoDB", "Vite"],
       image: "./assets/hyper-market-eight.vercel.app.png",
       code: "https://github.com/kushvijay234/hyper-market",
       live: "https://hyper-market-eight.vercel.app/",
       fallbackImage: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1200"
+    },
+      {
+      title: "QuickBill Restaurant POS",
+      desc: "Full-stack POS system for restaurants with table-wise billing, category-based menus, order tracking, and printable receipts. Built with REST APIs, MongoDB, and Tailwind/PostCSS.",
+      tech: ["React", "Node/Express", "MongoDB", "Tailwind"],
+      image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop",
+      code: "https://github.com/kushvijay234/quickbill-restaurant-pos",
+      live: "https://quickbill-restaurant-pos.vercel.app/"
     },
     {
       title: "Voucher Receipt App",
@@ -683,9 +685,9 @@ const Projects = () => {
       title: "GitHub Finder App",
       desc: "Real-time GitHub user search with REST API, repositories, followers, and robust error handling (0% crashes in testing).",
       tech: ["HTML/CSS", "JavaScript", "GitHub API"],
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop",
-      code: "https://github.com/rajitmaurya/githubFinder",
-      live: "https://rajitmaurya.github.io/githubFinder/"
+      image: githubFinderImage,
+      code: "https://github.com/rajitmaurya/githubProfileFinder",
+      live: "https://rajitmaurya.github.io/githubProfileFinder/"
     }
   ];
 
