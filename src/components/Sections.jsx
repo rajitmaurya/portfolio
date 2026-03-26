@@ -5,6 +5,8 @@ import profileImage from '../assets/HeroProfile.jpg';
 import resumeFile from '../assets/Resume.pdf';
 import githubFinderImage from '../assets/github-finder.png';
 import ByteBazaar from '../assets/ByteBazaar.png';
+import AboutImage from '../assets/AboutMe.png';
+
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -260,7 +262,7 @@ const About = () => {
             </div>
             <img src="./assets/19362653.jpg" alt="Developer vector"
               className="w-full max-w-md mx-auto rounded-2xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800"
-              onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200' }} />
+              onError={(e) => { e.target.src = AboutImage }} />
           </motion.div>
 
           {/* Right column: Info */}
@@ -651,7 +653,7 @@ const Projects = () => {
       live: "https://byte-bazaarin.vercel.app/",
       fallbackImage: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1200"
     },
-      {
+    {
       title: "QuickBill Restaurant POS",
       desc: "Full-stack POS system for restaurants with table-wise billing, category-based menus, order tracking, and printable receipts. Built with REST APIs, MongoDB, and Tailwind/PostCSS.",
       tech: ["React", "Node/Express", "MongoDB", "Tailwind"],
