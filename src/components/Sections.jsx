@@ -214,7 +214,7 @@ const About = () => {
           >
 
             <img src="./assets/19362653.jpg" alt="Developer vector"
-              className="w-full max-w-md mx-auto rounded-2xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800"
+              className="w-full max-w-md mx-auto rounded-2xl shadow-card border border-slate-800"
               onError={(e) => { e.target.src = AboutImage }} />
           </motion.div>
 
@@ -330,7 +330,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-              className="rounded-xl bg-transparent dark:bg-slate-950 p-6 shadow-card ring-1 ring-slate-800"
+              className="rounded-xl bg-slate-900/40 p-6 border border-slate-800 shadow-card"
             >
               <h3 className="text-lg font-semibold mb-4">{category.title}</h3>
               <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
@@ -388,10 +388,10 @@ const Certifications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="rounded-xl border border-slate-900 p-5 bg-transparent hover:shadow-md transition"
+              className="rounded-xl border border-slate-800 p-5 bg-slate-900/40 hover:bg-slate-900/60 transition-all duration-300"
             >
-              <p className="font-medium text-slate-900 dark:text-white">{cert.title}</p>
-              <p className="text-sm text-slate-500 dark:text-slate-400">{cert.issuer}</p>
+              <p className="font-medium text-white">{cert.title}</p>
+              <p className="text-sm text-slate-400">{cert.issuer}</p>
             </motion.div>
           ))}
         </div>
@@ -424,10 +424,10 @@ const Experience = () => {
             <div className="absolute -left-2 top-0 h-4 w-4 rounded-full bg-brand-500 ring-2 ring-white dark:ring-slate-950">
             </div>
             <div
-              className="bg-transparent rounded-xl border border-slate-900 p-6">
+              className="bg-slate-900/40 rounded-xl border border-slate-800 p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">MERN Stack Intern — GeeksforGeeks</h3>
-                <span className="text-sm text-slate-500 dark:text-slate-400">Nov 2025 – Feb 2025</span>
+                <h3 className="text-lg font-semibold text-white">MERN Stack Intern — GeeksforGeeks</h3>
+                <span className="text-sm text-slate-400">Nov 2025 – Feb 2025</span>
               </div>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                 Built full-stack applications using MongoDB, Express.js, React.js, and Node.js. Delivered optimized APIs,
@@ -519,7 +519,7 @@ const Education = () => {
             >
               <div className="absolute -left-2 top-0 h-4 w-4 rounded-full bg-brand-500 ring-2 ring-white dark:ring-slate-950">
               </div>
-              <div className="bg-transparent rounded-xl shadow-card ring-1 ring-slate-100 p-6">
+              <div className="bg-slate-900/40 rounded-xl border border-slate-800 p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <h3 className="text-lg font-semibold">{item.degree}</h3>
                   <span className="text-sm text-slate-500 dark:text-slate-400">{item.period}</span>
@@ -570,7 +570,7 @@ const Achievements = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-6 rounded-2xl bg-transparent border border-slate-900 shadow-sm"
+              className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 shadow-sm"
             >
               <div className="flex items-center gap-4 mb-3">
                 <div className="p-2 bg-brand-100 dark:bg-brand-900/30 rounded-lg text-brand-600">
@@ -657,7 +657,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group rounded-2xl border border-slate-900 p-5 hover:shadow-card transition bg-transparent"
+              className="group rounded-2xl border border-slate-800 p-5 hover:bg-slate-900/40 transition-all duration-300 bg-transparent"
             >
               <div className="aspect-[16/9] overflow-hidden rounded-lg ring-1 ring-slate-200/60 dark:ring-slate-800">
                 <img
@@ -670,7 +670,7 @@ const Projects = () => {
                   }}
                 />
               </div>
-              <h3 className="mt-4 font-semibold text-slate-900 dark:text-white">{project.title}</h3>
+              <h3 className="mt-4 font-semibold text-white">{project.title}</h3>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 line-clamp-3">
                 {project.desc}
               </p>
@@ -737,7 +737,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-4 rounded-xl border border-slate-900 p-5 hover:shadow-card transition bg-transparent"
+            className="flex items-center gap-4 rounded-xl border border-slate-800 p-5 hover:bg-slate-900/40 transition bg-transparent"
           >
             <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-600 flex items-center justify-center">
               <Mail size={20} />
@@ -755,7 +755,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-4 rounded-xl border border-slate-900 p-5 hover:shadow-card transition bg-transparent"
+            className="flex items-center gap-4 rounded-xl border border-slate-800 p-5 hover:bg-slate-900/40 transition bg-transparent"
           >
             <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-600 flex items-center justify-center">
               <Linkedin size={20} />
@@ -774,11 +774,11 @@ const Contact = () => {
           className="mt-10 space-y-4"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="text" placeholder="Name" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors" />
-            <input type="email" placeholder="Email" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors" />
+            <input type="text" placeholder="Name" className="w-full p-4 rounded-xl bg-slate-900/40 border border-slate-800 focus:outline-none focus:border-brand-500 transition-colors" />
+            <input type="email" placeholder="Email" className="w-full p-4 rounded-xl bg-slate-900/40 border border-slate-800 focus:outline-none focus:border-brand-500 transition-colors" />
           </div>
-          <input type="text" placeholder="Subject" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors" />
-          <textarea rows="4" placeholder="Message" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors"></textarea>
+          <input type="text" placeholder="Subject" className="w-full p-4 rounded-xl bg-slate-900/40 border border-slate-800 focus:outline-none focus:border-brand-500 transition-colors" />
+          <textarea rows="4" placeholder="Message" className="w-full p-4 rounded-xl bg-slate-900/40 border border-slate-800 focus:outline-none focus:border-brand-500 transition-colors"></textarea>
           <button className="w-full bg-brand-600 hover:bg-brand-700 text-white font-medium py-4 rounded-xl transition shadow-lg shadow-brand-500/20">Send Message</button>
         </motion.form>
       </div>
