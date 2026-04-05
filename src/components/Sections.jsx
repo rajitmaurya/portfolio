@@ -7,7 +7,7 @@ import githubFinderImage from '../assets/github-finder.png';
 import ByteBazaar from '../assets/ByteBazaar.png';
 import AboutImage from '../assets/AboutMe.png';
 
-const Navbar = ({ darkMode, setDarkMode }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -44,52 +44,10 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               {link.name}
             </a>
           ))}
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="group relative flex items-center h-8 w-14 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-1 cursor-pointer transition-colors duration-300"
-            aria-label="Toggle Dark Mode"
-          >
-            <motion.div
-              className="absolute left-1 h-6 w-6 rounded-full bg-white dark:bg-slate-900 shadow-sm flex items-center justify-center z-10"
-              animate={{ x: darkMode ? 24 : 0 }}
-              transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            >
-              {darkMode ? (
-                <Moon size={14} className="text-blue-500 fill-blue-500" />
-              ) : (
-                <Sun size={14} className="text-amber-500 fill-amber-500" />
-              )}
-            </motion.div>
-            <div className="flex justify-between w-full px-1.5 text-slate-400 dark:text-slate-500">
-              <Sun size={12} className={!darkMode ? "opacity-100" : "opacity-40 transition-opacity"} />
-              <Moon size={12} className={darkMode ? "opacity-100" : "opacity-40 transition-opacity"} />
-            </div>
-          </button>
         </div>
 
         {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="group relative flex items-center h-7 w-12 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-0.5 cursor-pointer transition-colors"
-            aria-label="Toggle Dark Mode"
-          >
-            <motion.div
-              className="absolute left-0.5 h-6 w-6 rounded-full bg-white dark:bg-slate-900 shadow-sm flex items-center justify-center z-10"
-              animate={{ x: darkMode ? 20 : 0 }}
-              transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            >
-              {darkMode ? (
-                <Moon size={12} className="text-blue-500 fill-blue-500" />
-              ) : (
-                <Sun size={12} className="text-amber-500 fill-amber-500" />
-              )}
-            </motion.div>
-            <div className="flex justify-between w-full px-1 text-slate-400">
-              <Sun size={10} className={!darkMode ? "opacity-100" : "opacity-40"} />
-              <Moon size={10} className={darkMode ? "opacity-100" : "opacity-40"} />
-            </div>
-          </button>
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -127,7 +85,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 const Hero = () => {
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-50 to-white dark:from-slate-900 dark:to-slate-950">
+      <div className="absolute inset-0 -z-10 bg-transparent">
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
@@ -218,9 +176,6 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div
-              className="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-tr from-brand-200/50 to-sky-100 dark:from-brand-900/20 dark:to-slate-900 blur-2xl">
-            </div>
             <img className="w-full max-w-md mx-auto rounded-2xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800"
               src={profileImage} alt="Rajitram"
               onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop'; }} />
@@ -234,7 +189,7 @@ const Hero = () => {
 const SectionTitle = ({ title, subtitle, icon: Icon }) => (
   <div className="flex flex-col items-center text-center mb-16">
     {Icon && (
-      <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-2xl text-blue-600 mb-4 border border-blue-100 dark:border-blue-800">
+      <div className="p-3 bg-blue-50/50 dark:bg-slate-800/50 rounded-2xl text-blue-600 mb-4 border border-blue-100 dark:border-slate-700">
         <Icon size={28} />
       </div>
     )}
@@ -245,7 +200,7 @@ const SectionTitle = ({ title, subtitle, icon: Icon }) => (
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
+    <section id="about" className="py-20 bg-transparent border-t border-slate-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
@@ -257,9 +212,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div
-              className="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-tr from-brand-200/50 to-sky-100 dark:from-brand-900/20 dark:to-slate-900 blur-2xl">
-            </div>
+
             <img src="./assets/19362653.jpg" alt="Developer vector"
               className="w-full max-w-md mx-auto rounded-2xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800"
               onError={(e) => { e.target.src = AboutImage }} />
@@ -358,7 +311,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
+    <section id="skills" className="py-20 bg-transparent border-t border-slate-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -377,7 +330,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-              className="rounded-xl bg-slate-50 dark:bg-slate-900 p-6 shadow-card ring-1 ring-slate-200/60 dark:border-slate-800"
+              className="rounded-xl bg-transparent dark:bg-slate-950 p-6 shadow-card ring-1 ring-slate-800"
             >
               <h3 className="text-lg font-semibold mb-4">{category.title}</h3>
               <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
@@ -416,7 +369,7 @@ const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-16 sm:py-20 border-t border-slate-200/60 dark:border-slate-800 bg-white dark:bg-slate-950">
+    <section id="certifications" className="py-16 sm:py-20 border-t border-slate-900 bg-transparent">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -435,7 +388,7 @@ const Certifications = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="rounded-xl border border-slate-200/70 dark:border-slate-800 p-5 bg-slate-50 dark:bg-slate-900/50 hover:shadow-md transition"
+              className="rounded-xl border border-slate-900 p-5 bg-transparent hover:shadow-md transition"
             >
               <p className="font-medium text-slate-900 dark:text-white">{cert.title}</p>
               <p className="text-sm text-slate-500 dark:text-slate-400">{cert.issuer}</p>
@@ -449,7 +402,7 @@ const Certifications = () => {
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
+    <section id="experience" className="py-20 bg-transparent border-t border-slate-900">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -471,7 +424,7 @@ const Experience = () => {
             <div className="absolute -left-2 top-0 h-4 w-4 rounded-full bg-brand-500 ring-2 ring-white dark:ring-slate-950">
             </div>
             <div
-              className="bg-slate-50 dark:bg-slate-900 rounded-xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800 p-6">
+              className="bg-transparent rounded-xl border border-slate-900 p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">MERN Stack Intern — GeeksforGeeks</h3>
                 <span className="text-sm text-slate-500 dark:text-slate-400">Nov 2025 – Feb 2025</span>
@@ -526,13 +479,6 @@ const Education = () => {
       result: "8.63",
       resultType: "CGPA"
     },
-    // {
-    //   degree: "Diploma — Information Technology",
-    //   period: "2019 – 2022",
-    //   institution: "Feroze Gandhi Polytechnic, Raebareli",
-    //   result: "77%",
-    //   resultType: "Percentage"
-    // },
     {
       degree: "XII — UP Board",
       period: "2023",
@@ -550,7 +496,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
+    <section id="education" className="py-20 bg-transparent border-t border-slate-900">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -573,7 +519,7 @@ const Education = () => {
             >
               <div className="absolute -left-2 top-0 h-4 w-4 rounded-full bg-brand-500 ring-2 ring-white dark:ring-slate-950">
               </div>
-              <div className="bg-slate-50 dark:bg-slate-900 rounded-xl shadow-card ring-1 ring-slate-200/60 dark:ring-slate-800 p-6">
+              <div className="bg-transparent rounded-xl shadow-card ring-1 ring-slate-100 p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <h3 className="text-lg font-semibold">{item.degree}</h3>
                   <span className="text-sm text-slate-500 dark:text-slate-400">{item.period}</span>
@@ -605,7 +551,7 @@ const Achievements = () => {
   ];
 
   return (
-    <section id="achievements" className="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-200/60 dark:border-slate-800">
+    <section id="achievements" className="py-20 bg-transparent border-t border-slate-900">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -624,7 +570,7 @@ const Achievements = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-6 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/60 dark:border-slate-800 shadow-sm"
+              className="p-6 rounded-2xl bg-transparent border border-slate-900 shadow-sm"
             >
               <div className="flex items-center gap-4 mb-3">
                 <div className="p-2 bg-brand-100 dark:bg-brand-900/30 rounded-lg text-brand-600">
@@ -695,7 +641,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 sm:py-20 border-t border-slate-200/60 dark:border-slate-800">
+    <section id="projects" className="py-20 bg-transparent border-t border-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-2xl font-bold">Projects</h2>
@@ -711,7 +657,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group rounded-2xl border border-slate-200/70 dark:border-slate-800 p-5 hover:shadow-card transition bg-white dark:bg-slate-900/50"
+              className="group rounded-2xl border border-slate-900 p-5 hover:shadow-card transition bg-transparent"
             >
               <div className="aspect-[16/9] overflow-hidden rounded-lg ring-1 ring-slate-200/60 dark:ring-slate-800">
                 <img
@@ -765,7 +711,7 @@ const Projects = () => {
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 sm:py-20 border-t border-slate-200/60 dark:border-slate-800 bg-white dark:bg-slate-950">
+    <section id="contact" className="py-16 sm:py-20 border-t border-slate-900 bg-transparent">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -791,7 +737,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-4 rounded-xl border border-slate-200/70 dark:border-slate-800 p-5 hover:shadow-card transition bg-slate-50 dark:bg-slate-900/50"
+            className="flex items-center gap-4 rounded-xl border border-slate-900 p-5 hover:shadow-card transition bg-transparent"
           >
             <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-600 flex items-center justify-center">
               <Mail size={20} />
@@ -809,7 +755,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-4 rounded-xl border border-slate-200/70 dark:border-slate-800 p-5 hover:shadow-card transition bg-slate-50 dark:bg-slate-900/50"
+            className="flex items-center gap-4 rounded-xl border border-slate-900 p-5 hover:shadow-card transition bg-transparent"
           >
             <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-600 flex items-center justify-center">
               <Linkedin size={20} />
@@ -828,11 +774,11 @@ const Contact = () => {
           className="mt-10 space-y-4"
         >
           <div className="grid grid-cols-2 gap-4">
-            <input type="text" placeholder="Name" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 focus:outline-none focus:border-brand-500 transition-colors" />
-            <input type="email" placeholder="Email" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 focus:outline-none focus:border-brand-500 transition-colors" />
+            <input type="text" placeholder="Name" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors" />
+            <input type="email" placeholder="Email" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors" />
           </div>
-          <input type="text" placeholder="Subject" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 focus:outline-none focus:border-brand-500 transition-colors" />
-          <textarea rows="4" placeholder="Message" className="w-full p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200/70 dark:border-slate-800 focus:outline-none focus:border-brand-500 transition-colors"></textarea>
+          <input type="text" placeholder="Subject" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors" />
+          <textarea rows="4" placeholder="Message" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors"></textarea>
           <button className="w-full bg-brand-600 hover:bg-brand-700 text-white font-medium py-4 rounded-xl transition shadow-lg shadow-brand-500/20">Send Message</button>
         </motion.form>
       </div>
