@@ -649,7 +649,7 @@ const Projects = () => {
             className="text-sm text-brand-700 dark:text-brand-300 hover:underline">View GitHub</a>
         </div>
 
-        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, idx) => (
             <motion.article
               key={idx}
@@ -731,7 +731,7 @@ const Contact = () => {
           I’d love to hear about your project or collaboration ideas. Email me or connect on LinkedIn.
         </motion.p>
 
-        <div className="mt-8 grid sm:grid-cols-2 gap-4">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <motion.a
             href="mailto:rajitmaurya8318@gmail.com"
             initial={{ opacity: 0, x: -20 }}
@@ -773,7 +773,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="mt-10 space-y-4"
         >
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input type="text" placeholder="Name" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors" />
             <input type="email" placeholder="Email" className="w-full p-4 rounded-xl bg-transparent border border-slate-900 focus:outline-none focus:border-brand-500 transition-colors" />
           </div>
